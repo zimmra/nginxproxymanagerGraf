@@ -20,6 +20,6 @@ jobs:
       if: success()
       uses: manusa/actions-publish-docker@v1.1.2
       with:
-        name: evijayan2/nginx-proxy-manager-graf:$(date +%s)
+        name: evijayan2/nginx-proxy-manager-graf
         username: ${{ secrets.DOCKER_HUB_USER }}
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
