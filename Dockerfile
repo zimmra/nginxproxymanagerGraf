@@ -28,6 +28,15 @@ ARG INFLUX_HOST=192.168.0.11
 ENV INFLUX_PORT=192.168.0.11
 ARG INFLUX_PORT=192.168.0.11
 
+ENV INFLUX_BUCKET=influxdb
+ARG INFLUX_BUCKET=influxdb
+
+ENV INFLUX_ORG=influxdb
+ARG INFLUX_ORG=influxdb
+
+ENV INFLUX_TOKEN=influxdb
+ARG INFLUX_TOKEN=influxdb
+
 
 COPY requirements.txt /root/.config/NPMGRAF/requirements.txt
 RUN pip install -r /root/.config/NPMGRAF/requirements.txt
