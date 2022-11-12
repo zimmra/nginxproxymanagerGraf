@@ -13,6 +13,8 @@ RUN apk add --no-cache --update \
     zlib-dev \
     readline-dev \
     sqlite-dev \
+    xz-dev \
+    tk-dev \
     build-base
 
 # Set Python version
