@@ -29,6 +29,8 @@ ENV INFLUX_PORT=192.168.0.11
 ARG INFLUX_PORT=192.168.0.11
 
 
+COPY requirements.txt /root/.config/NPMGRAF/requirements.txt
+RUN pip install -r /root/.config/NPMGRAF/requirements.txt
 
 ## Copy files
 COPY Getipinfo.py /root/.config/NPMGRAF/Getipinfo.py
