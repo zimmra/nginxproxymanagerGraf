@@ -15,4 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag evijayan2/nginx-proxy-manager-graf:$(date +%s)
+      run: docker build . --file Dockerfile --tag nginx-proxy-manager-graf:$(date +%s)
+    - name: Dockerize
+      if: success()
+      uses: manusa/actions-publish-docker@v1.1.2
+      with:
+        name: evijayan2/nginx-proxy-manager-graf:$(date +%s)
+        username: ${{ secrets.DOCKER_HUB_USER }}
+        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
