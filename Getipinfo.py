@@ -14,7 +14,7 @@ print(socket.gethostname())
 
 
 reader = geoip2.database.Reader('/GeoLite2-City.mmdb')
-response = reader.city(str(sys.argv[1]))
+response = reader.city(str(sys.argv[1]).strip())
 
 Lat = response.location.latitude
 ISO = response.country.iso_code
@@ -23,7 +23,7 @@ State = response.subdivisions.most_specific.name
 City = response.city.name
 Country = response.country.name
 Zip = response.postal.code
-IP = str(sys.argv[1])
+IP = str(sys.argv[1]).strip()
 Domain = str(sys.argv[2])
 duration = int(sys.argv[3])
 print (Country)
