@@ -26,14 +26,14 @@ Zip = response.postal.code
 IP = str(sys.argv[1]).strip()
 Domain = str(sys.argv[2])
 duration = int(sys.argv[3])
-print (Country)
-print (State)
-print (City)
-print (Zip)
-print (Long)
-print (Lat)
-print (ISO)
-print (IP)
+# print (Country)
+# print (State)
+# print (City)
+# print (Zip)
+# print (Long)
+# print (Lat)
+# print (ISO)
+# print (IP)
 reader.close()
 
 
@@ -57,9 +57,10 @@ ifbucket = os.getenv('INFLUX_BUCKET')
 iforg    = os.getenv('INFLUX_ORG')
 iftoken  = os.getenv('INFLUX_TOKEN')
 
+
+print(ifbucket, iforg, ifuser, ifpass)
 hostname = socket.gethostname()
 measurement_name = ("ReverseProxyConnections")
-print (measurement_name)
 print ('*************************************')
 # take a timestamp for this measurement
 time = datetime.datetime.utcnow()
@@ -106,7 +107,7 @@ ifclient = influxdb_client.InfluxDBClient(
 # write the measurement
 write_api = ifclient.write_api(write_options=SYNCHRONOUS)
 
-point = influxdb_client.Point("measurement_name")
+point = influxdb_client.Point(measurement_name)
 point.tag("key", ISO)
 point.tag("latitude", Lat)
 point.tag("longitude", Long)
